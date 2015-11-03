@@ -1,0 +1,295 @@
+@import url("variables.less");
+
+.width (@cols:1) {
+	width: (@cols * (@column + @gutter) - @gutter) / @em;
+}
+
+body{
+	background: @background;
+	padding: 0;
+	margin:0;
+}
+
+header{
+	
+	margin: @vrythme;
+	width: 100%;
+	clear: both;
+	display: block;
+	overflow: hidden;	
+	
+	#logo{
+	
+		//width: 230px;
+		float:left;
+		
+		a{
+			background: url(assets/oeil_logo.png) no-repeat;
+			width: 82px;
+			height: 81px;
+			display: block;
+			margin: @vrythme/2 0;
+		}
+	}
+	
+	#navigation{
+		//width: 230px;
+		float:left;
+		
+		ul{
+			list-style: none;
+			margin: 0;
+			padding: 0;	
+			
+			li{
+				margin: 0;
+				padding: 0;
+				border-bottom: 1px solid @typoSecond;
+				
+				a{
+					color: @typoMain;
+					text-decoration: none;
+					font-size: 0.8em;
+					display: block;
+					
+					
+					line-height: 0.8em;
+					
+					padding: @vrythme/2 0;
+					
+					&:hover{
+						color: @highlightMain;
+					}
+					&.active{
+						font-family: Proxima-Nova-Bold;
+						color: white;
+					}
+				}
+			}
+		}
+	}
+}
+
+/*  4 colonnes, 320 px layout for smartphones (iPhone portrait)
+ *  ---------------------------------------
+ */
+@media only screen and (max-width: 467px) {
+	
+}
+/*  6 colonnes, 480 px layout for smartphones (iPhone landscape)
+ *  ---------------------------------------
+ */
+@media only screen and (min-width: 468px) and (max-width: 760px) {
+	
+} 
+/*  13-column, 1000 px layout for desktops and laptops (also: iPad landscape)
+ *  ---------------------------------------
+ */
+@media only screen and (min-width: 1020px) {
+	
+
+}
+/*  12-column, 1240 px layout for desktops and laptops
+ *  ---------------------------------------
+ */
+@media only screen and (min-width: 1260px) {
+		
+}
+
+/*	Retina media query.
+	Overrides styles for devices with a 
+	device-pixel-ratio of 2+, such as iPhone 4.
+-----------------------------------------------    */
+
+@media 
+	only screen and (-webkit-min-device-pixel-ratio: 2),
+	only screen and (min-device-pixel-ratio: 2) {
+	
+	body {
+	
+	}
+	
+}
+
+
+.view-frontpage{
+	
+	clear: both;
+	// overflow: auto;
+	
+	/* trick pour garder le rythme vertical */
+	.views-row{
+		float:left;
+		background: #000;
+		margin: 0;
+		padding: 0;
+		width: 25%;
+		height: width;
+		height: 180px;
+		
+		.views-field{
+		
+			height: 100%;
+			
+			.field-content{
+			
+				height: 100%;
+				
+				a{
+					 display: block;
+					 width: 100%;
+					 height: 100%;
+					 position: relative;
+					 
+					 -webkit-transition: opacity 0.1s ease-in-out;
+					 -moz-transition: opacity 0.1s ease-in-out;
+					 -o-transition: opacity 0.1s ease-in-out;
+					 transition: opacity 0.1s ease-in-out;
+					 
+					
+					#wrapper{
+						
+						position: absolute;
+						
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 100%;
+						
+						padding: 20px;
+						
+/* 						background: -webkit-linear-gradient(#a0e21a 0%, #ffffff 100%); */
+						
+									
+						z-index: 100;
+						opacity: 0;
+		
+						display: table;
+						
+						-webkit-transition: opacity 0.25s ease-in-out;
+						 -moz-transition: opacity 0.25s ease-in-out;
+						 -o-transition: opacity 0.25s ease-in-out;
+						 transition: opacity 0.25s ease-in-out;
+						 
+						 #title-panel{
+						 
+						 	display: table-cell;
+						 	vertical-align: middle;
+						 	
+						 	
+							 
+							 h3.node-title{
+								text-align: center;
+								color: #FFF;
+								font-family: Proxima-Nova-Light, sans-serif;
+								text-transform: uppercase;
+								font-size: 1.2em;
+								
+							}
+						 }
+						
+						
+					}
+					
+					img{
+						margin: 0;
+						padding: 0;
+						border: 0;
+						position: relative;
+						width: 100%;
+/* 						z-index: 0; */
+						
+						-webkit-transition: opacity 0.1s ease-in-out;
+						 -moz-transition: opacity 0.1s ease-in-out;
+						 -o-transition: opacity 0.1s ease-in-out;
+						 transition: opacity 0.1s ease-in-out;
+					}
+					
+					&:hover{
+						
+						
+						#wrapper{
+							opacity: 1;
+						}
+						
+						img{
+							opacity: 0.9;
+						}
+						
+					}
+					
+					
+					
+				}
+				
+				.views-field-title{
+					padding: 0 @vrythme/2;
+					opacity: 0;
+					
+					a{
+						font-size: 1.3em;
+						text-decoration: none;
+					}
+				}
+				.views-field-created{
+					padding: 0 @vrythme/2;
+					font-size: 0.9em;
+					color: #999;
+					
+					opacity: 0;
+				}
+			}
+		}
+	}
+}
+
+
+.page{
+	
+	.node{
+		width: 100%;
+		padding-top: @vrythme*2;
+		
+		h1, p{
+			text-align: center;
+		}
+		
+		.node-inner{
+			width: 800px;
+			margin: 0 auto;
+			margin-bottom: @vrythme*4;
+		}
+		
+		img{
+			margin-bottom: @vrythme*4;
+			background: #BEBEBE;
+			border: 0;
+			
+			.left{
+				float: left;
+			}
+			.right{
+				float: right;
+			}
+		}
+	}
+}
+
+#footer{
+	width: 100%;
+	clear: both;
+	margin: @vrythme; 
+	font-size: 0.8em;
+	overflow: auto;
+	
+	ul{
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		
+		li{
+			float: left;
+		}
+		
+	}
+}
